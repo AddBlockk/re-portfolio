@@ -1,3 +1,83 @@
 .intro {
-  background-color: red;
+  background-color: white;
+  display: flex;
+
+  .left {
+    flex: 0.5;
+    overflow: hidden;
+    .imgContainer {
+      // border-radius: 50%;
+      height: 700px;
+      width: 700px;
+
+      align-items: flex-end;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      float: right;
+      img {
+        height: 90%;
+        border-radius: 15%;
+      }
+    }
+  }
+  .right {
+    flex: 0.5;
+    position: relative;
+
+    .wrapper {
+      width: 100%;
+      height: 100%;
+      padding-left: 50px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      h1 {
+        font-size: 60px;
+        margin: 10px 0;
+      }
+      h2 {
+        font-size: 35px;
+      }
+      h3 {
+        font-size: 30px;
+        height: 10%;
+
+        span {
+          font-size: inherit;
+          color: crimson;
+        }
+
+        .ityped-cursor {
+          animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+          50% {
+            opacity: 1;
+          }
+          100% {
+            opacity: 0;
+          }
+        }
+      }
+    }
+    a {
+      position: absolute;
+      bottom: 10px;
+      left: 40%;
+      svg {
+        width: 80px;
+        height: 80px;
+        animation: arrowBlink 2s infinite;
+        color: black;
+      }
+      @keyframes arrowBlink {
+        100% {
+          opacity: 0;
+        }
+      }
+    }
+  }
 }
