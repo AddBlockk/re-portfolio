@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import PortfolioList from "../portfolioList/PortfolioList";
 import "./portfolio.scss";
 import {
-  featuredPortfolio,
+  formAppPortfolio,
   webPortfolio,
   mobilePortfolio,
   designPortfolio,
@@ -10,12 +10,12 @@ import {
 } from "../../data";
 
 export default function Portfolio() {
-  const [selected, setSelected] = useState("featured");
+  const [selected, setSelected] = useState("form-App");
   const [data, setData] = useState([]);
   const list = [
     {
-      id: "featured",
-      title: "Featured",
+      id: "form-App",
+      title: "Form-App",
     },
     {
       id: "web",
@@ -37,8 +37,8 @@ export default function Portfolio() {
 
   useEffect(() => {
     switch (selected) {
-      case "featured":
-        setData(featuredPortfolio);
+      case "form":
+        setData(formAppPortfolio);
         break;
       case "web":
         setData(webPortfolio);
@@ -53,7 +53,7 @@ export default function Portfolio() {
         setData(contentPortfolio);
         break;
       default:
-        setData(featuredPortfolio);
+        setData(formAppPortfolio);
     }
   }, [selected]);
 
@@ -77,6 +77,10 @@ export default function Portfolio() {
             <h3>{d.title}</h3>
           </div>
         ))}
+        <div className="text">
+          Веб-приложение для регистрации пользователей. В приложении
+          используются следующие технологии: JS, React, Scss.
+        </div>
       </div>
     </div>
   );

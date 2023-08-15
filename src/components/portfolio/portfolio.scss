@@ -4,8 +4,16 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+
   h1 {
     font-size: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    @include mobile {
+      font-size: 30px;
+    }
   }
 
   ul {
@@ -13,6 +21,14 @@
     padding: 0;
     list-style: none;
     display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include mobile {
+      margin: 10px 0;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
   }
 
   .container {
@@ -20,11 +36,16 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-wrap: wrap;
+    margin-top: 5%;
+    @include mobile {
+      width: 100%;
+      display: block;
+    }
 
     .item {
-      width: 220px;
-      height: 150px;
+      flex: 1;
+      width: max-content;
+      height: max-content;
       border-radius: 20px;
       border: 1px solid lightgrey;
       margin: 10px 20px;
@@ -35,10 +56,16 @@
       position: relative;
       transition: all 0.5s ease;
       cursor: pointer;
+      @include mobile {
+        width: 50%;
+        height: max-content;
+        margin: 0 auto;
+        margin-top: 30px;
+      }
 
       h3 {
         position: absolute;
-        font-size: 20px;
+        font-size: 30px;
       }
 
       img {
@@ -46,6 +73,8 @@
         height: 100%;
         object-fit: cover;
         z-index: 1;
+        @include mobile {
+        }
       }
 
       &:hover {
@@ -54,6 +83,15 @@
           opacity: 0.2;
           z-index: 0;
         }
+      }
+    }
+    .text {
+      display: flex;
+      flex: 1;
+      font-size: 18px;
+      @include mobile {
+        text-align: center;
+        margin-top: 10px;
       }
     }
   }
