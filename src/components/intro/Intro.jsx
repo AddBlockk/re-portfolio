@@ -27,10 +27,12 @@ export default function Intro() {
           <h3>
             <span ref={textRef}></span>
           </h3>
+          <div>
+            <a href="#portfolio">
+              <ArrowDownward />
+            </a>
+          </div>
         </div>
-        <a href="#portfolio">
-          <ArrowDownward />
-        </a>
       </div>
     </div>
   );

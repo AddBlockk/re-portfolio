@@ -90,8 +90,9 @@
       bottom: 10px;
       left: 40%;
       @include mobile {
-        left: 80px;
+        left: 0;
         bottom: 0px;
+        position: inherit;
       }
       svg {
         width: 80px;
