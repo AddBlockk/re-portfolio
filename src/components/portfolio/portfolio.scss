@@ -38,7 +38,7 @@
     justify-content: center;
     margin-top: 5%;
     @include mobile {
-      width: 100%;
+      width: 90%;
       display: block;
     }
 
@@ -57,7 +57,7 @@
       transition: all 0.5s ease;
       cursor: pointer;
       @include mobile {
-        width: 50%;
+        width: 80%;
         height: max-content;
         margin: 0 auto;
         margin-top: 30px;
@@ -90,8 +90,9 @@
       flex: 1;
       font-size: 18px;
       @include mobile {
-        text-align: center;
         margin-top: 10px;
+        text-align: center;
+        padding: 0px 20px;
       }
     }
   }
