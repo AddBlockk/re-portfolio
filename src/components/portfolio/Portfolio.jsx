@@ -3,7 +3,7 @@ import PortfolioList from "../portfolioList/PortfolioList";
 import "./portfolio.scss";
 import {
   formAppPortfolio,
-  webPortfolio,
+  restaurant,
   mobilePortfolio,
   designPortfolio,
   contentPortfolio,
@@ -16,10 +16,11 @@ export default function Portfolio() {
     {
       id: "form-App",
       title: "Form-App",
+      text: "text",
     },
     {
-      id: "web",
-      title: "Web App",
+      id: "restaurant",
+      title: "Restaurant",
     },
     {
       id: "mobile",
@@ -40,8 +41,8 @@ export default function Portfolio() {
       case "form":
         setData(formAppPortfolio);
         break;
-      case "web":
-        setData(webPortfolio);
+      case "restaurant":
+        setData(restaurant);
         break;
       case "mobile":
         setData(mobilePortfolio);
@@ -67,20 +68,20 @@ export default function Portfolio() {
             active={selected === item.id}
             setSelected={setSelected}
             id={item.id}
+            text={item.text}
           />
         ))}
       </ul>
       <div className="container">
         {data.map((d) => (
-          <div className="item">
+          <a href="https://form-app-tan.vercel.app/" className="item">
             <img src={d.img} alt="" />
             <h3>{d.title}</h3>
-          </div>
+          </a>
         ))}
-        <div className="text">
-          Веб-приложение для регистрации пользователей. В приложении
-          используются следующие технологии: JS, React, Scss.
-        </div>
+        {data.map((d) => (
+          <div className="text">{d.text}</div>
+        ))}
       </div>
     </div>
   );
