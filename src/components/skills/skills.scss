@@ -29,9 +29,20 @@
     align-items: center;
     gap: 10px;
     padding: 0;
+
     li {
       margin-right: 0px;
       padding: 0px;
+      -webkit-filter: contrast(100%);
+      -webkit-transition: all 0.5s ease;
+      -moz-transition: all 0.5s ease;
+      transition: all 0.5s ease;
+    }
+    li:hover {
+      background-color: white;
+      opacity: 50%;
+      color: white;
+      -webkit-filter: contrast(185%);
     }
   }
   img {
