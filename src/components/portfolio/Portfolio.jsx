@@ -1,13 +1,7 @@
 import { useEffect, useState } from "react";
 import PortfolioList from "../portfolioList/PortfolioList";
 import "./portfolio.scss";
-import {
-  formAppPortfolio,
-  restaurant,
-  mobilePortfolio,
-  designPortfolio,
-  contentPortfolio,
-} from "../../data";
+import { formAppPortfolio, restaurant, astrakhanPharmacies } from "../../data";
 
 export default function Portfolio() {
   const [selected, setSelected] = useState("form-App");
@@ -16,23 +10,14 @@ export default function Portfolio() {
     {
       id: "form-App",
       title: "Form-App",
-      text: "text",
     },
     {
       id: "restaurant",
       title: "Restaurant",
     },
     {
-      id: "mobile",
-      title: "Mobile App",
-    },
-    {
-      id: "design",
-      title: "Design",
-    },
-    {
-      id: "content",
-      title: "Content",
+      id: "astrakhanPharmacies",
+      title: "Astrakhan-pharmacies",
     },
   ];
 
@@ -44,14 +29,8 @@ export default function Portfolio() {
       case "restaurant":
         setData(restaurant);
         break;
-      case "mobile":
-        setData(mobilePortfolio);
-        break;
-      case "design":
-        setData(designPortfolio);
-        break;
-      case "content":
-        setData(contentPortfolio);
+      case "astrakhanPharmacies":
+        setData(astrakhanPharmacies);
         break;
       default:
         setData(formAppPortfolio);
@@ -69,12 +48,13 @@ export default function Portfolio() {
             setSelected={setSelected}
             id={item.id}
             text={item.text}
+            link={item.link}
           />
         ))}
       </ul>
       <div className="container">
         {data.map((d) => (
-          <a href="https://form-app-tan.vercel.app/" className="item">
+          <a href={d.link} target="_blank" className="item" rel="noreferrer">
             <img src={d.img} alt="" />
             <h3>{d.title}</h3>
           </a>
